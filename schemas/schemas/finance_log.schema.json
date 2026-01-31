@@ -1,0 +1,15 @@
+{
+  "$schema_version": "1.0",
+  "$effective_date": "01-Feb-2026",
+  "$owner": "Lucy OS",
+
+  "transaction_id": "",
+  "type": "expense",
+  "timestamp": "",
+  "amount": 0,
+  "currency": "INR",
+  "category": "",
+  "mode": "",
+  "note": "",
+  "verified": false
+}
