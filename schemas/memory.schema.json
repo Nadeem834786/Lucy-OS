@@ -1,0 +1,17 @@
+{
+  "$schema_version": "1.0",
+  "$effective_date": "01-Feb-2026",
+  "$owner": "Lucy OS",
+
+  "memory_id": "",
+  "memory_type": "decision|template|client_preference|pricing_logic",
+
+  "summary": "",
+  "details": "",
+
+  "source": "manual|agent",
+  "created_on": "",
+
+  "retrieval_tags": [],
+  "write_protected": true
+}
