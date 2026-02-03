@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daily AM / PM Digest Schema",
+  "type": "object",
+
+  "properties": {
+    "digest_type": {
+      "type": "string",
+      "enum": ["AM", "PM"]
+    },
+    "date": {
+      "type": "string"
+    },
+    "top_focus": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "schedule_blocks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "completed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "pending": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+
+  "required": ["digest_type", "date", "notes"]
+}

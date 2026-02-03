@@ -1,10 +1,11 @@
+from state import CURRENT_PLAN
+
 def handle(request):
     """
     Deterministic planning agent.
     No AI. No guessing. Fixed structure.
     """
-
-    return {
+    plan = {
         "plan_id": "plan-demo-001",
         "plan_type": "daily",
         "date_range": "03-Feb-2026",
@@ -38,3 +39,9 @@ def handle(request):
             "Travel time between locations is 30 minutes"
         ]
     }
+
+    # publish plan to shared state
+    global CURRENT_PLAN
+    CURRENT_PLAN = plan
+
+    return plan

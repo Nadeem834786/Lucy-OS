@@ -19,7 +19,14 @@ def route_request(request):
             "schema": "schemas/lead_intelligence.schema.json"
         }
 
+    if intent == "daily_digest":
+        return {
+            "agent": "daily_digest_agent",
+            "schema": "schemas/daily_digest.schema.json"
+        }
+
     return {
         "agent": None,
         "schema": None
     }
+

@@ -1,35 +1,51 @@
 from orchestrator import route_request
-from agents.finance_logging_agent import handle as finance_handle
 from agents.planning_agent import handle as planning_handle
+from agents.daily_digest_agent import handle as digest_handle
 from utils.schema_validator import validate_schema
 
-# Incoming request
-request = {
-    "request_id": "req-002",
+# STEP 1 — Generate today's plan
+planning_request = {
+    "request_id": "req-plan-001",
     "classified_intent": "planning"
 }
 
-# Route request via orchestrator
-routing = route_request(request)
+planning_route = route_request(planning_request)
+plan = planning_handle(planning_request)
 
-if routing["agent"] is None:
-    print("No agent assigned")
+print("Planning Output:", plan)
 
-elif routing["agent"] == "planning_agent":
-    result = planning_handle(request)
+# STEP 2 — Generate AM Digest
+am_request = {
+    "request_id": "req-am-001",
+    "classified_intent": "daily_digest",
+    "digest_type": "AM"
+}
 
-elif routing["agent"] == "finance_logging_agent":
-    result = finance_handle(request)
+am_route = route_request(am_request)
+am_result = digest_handle(am_request)
 
-else:
-    print("Agent not implemented")
-    exit()
-
-# Validate agent output
 is_valid, message = validate_schema(
-    routing["schema"],
-    result
+    am_route["schema"],
+    am_result
 )
 
-print("Agent Output:", result)
+print("\nAM Digest:", am_result)
+print("Validation:", message)
+
+# STEP 3 — Generate PM Digest
+pm_request = {
+    "request_id": "req-pm-001",
+    "classified_intent": "daily_digest",
+    "digest_type": "PM"
+}
+
+pm_route = route_request(pm_request)
+pm_result = digest_handle(pm_request)
+
+is_valid, message = validate_schema(
+    pm_route["schema"],
+    pm_result
+)
+
+print("\nPM Digest:", pm_result)
 print("Validation:", message)
