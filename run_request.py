@@ -6,6 +6,7 @@ from agents.daily_digest_agent import handle as digest_handle
 from utils.schema_validator import validate_schema
 from agents.weekly_planning_agent import handle as weekly_handle
 from agents.lead_aging_agent import handle as lead_aging_handle
+from agents.monthly_review_agent import handle as monthly_review_handle
 
 # STEP 1 — Create today's plan
 planning_handle({
@@ -94,3 +95,30 @@ print("Checked Date:", aging_result["checked_date"])
 print("Escalations:")
 for e in aging_result["escalations"]:
     print("-", e)
+
+# STEP — Monthly Review
+monthly_request = {
+    "request_id": "req-monthly",
+    "classified_intent": "monthly_review"
+}
+
+monthly_result = monthly_review_handle(monthly_request)
+
+print("\nMONTHLY REVIEW")
+print("Month:", monthly_result["month"])
+
+print("\nLead Metrics:")
+print("Total:", monthly_result["lead_metrics"]["total"])
+print("By Category:", monthly_result["lead_metrics"]["by_category"])
+print("Escalated:", monthly_result["lead_metrics"]["escalated"])
+print("Stalled Hot:", monthly_result["lead_metrics"]["stalled_hot"])
+
+print("\nExecution Metrics:")
+print("Tasks Planned:", monthly_result["execution_metrics"]["tasks_planned"])
+print("Tasks Completed:", monthly_result["execution_metrics"]["tasks_completed"])
+print("Completion Rate:",
+      monthly_result["execution_metrics"]["completion_rate_percent"], "%")
+
+print("\nSignals:")
+for s in monthly_result["signals"]:
+    print("-", s)

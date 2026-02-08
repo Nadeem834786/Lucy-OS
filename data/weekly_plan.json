@@ -14,6 +14,7 @@
     "Site visit \u2013 Ramesh",
     "Site visit \u2013 Ramesh",
     "Site visit \u2013 Ramesh",
+    "Site visit \u2013 Ramesh",
     "Site visit \u2013 Ramesh"
   ],
   "revenue_focus": [
@@ -22,9 +23,12 @@
     "HOT \u2013 Ramesh",
     "HOT \u2013 Ramesh",
     "HOT \u2013 Ramesh",
+    "HOT \u2013 Ramesh",
     "HOT \u2013 Ramesh"
   ],
-  "escalation_focus": [],
+  "escalation_focus": [
+    "STALLED HOT LEAD \u2013 Ramesh"
+  ],
   "daily_outline": {
     "2026-02-08": "Revenue + execution blocks",
     "2026-02-09": "Revenue + execution blocks",

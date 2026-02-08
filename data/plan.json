@@ -63,6 +63,16 @@
       "buffer_minutes": 30,
       "expected_outcome": "Advance hot lead toward closure",
       "status": "planned"
+    },
+    {
+      "task_id": "t-007",
+      "title": "Site visit \u2013 Ramesh",
+      "time_block": "12:00\u201314:00 IST",
+      "priority": "P1",
+      "dependency": "",
+      "buffer_minutes": 30,
+      "expected_outcome": "Advance hot lead toward closure",
+      "status": "planned"
     }
   ],
   "assumptions": [

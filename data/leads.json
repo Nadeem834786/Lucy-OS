@@ -84,5 +84,21 @@
     "created_date": "2026-02-08",
     "last_updated_date": "2026-02-08",
     "flags": []
+  },
+  {
+    "lead_id": "lead-001",
+    "client_name": "Ramesh",
+    "source": "instagram",
+    "budget_range": "30-35L",
+    "timeline_days": 20,
+    "intent_score": 5,
+    "category": "hot",
+    "next_action": "site_visit",
+    "next_action_due": "within 24 hours",
+    "disqualification_reason": "",
+    "notes": "Lead evaluated by deterministic rules",
+    "created_date": "2026-02-08",
+    "last_updated_date": "2026-02-08",
+    "flags": []
   }
 ]
